@@ -122,3 +122,12 @@ function vies_deploy_update_7006() {
   module_enable(array('vih_calendar'));
   module_enable(array('twitter_timeline'));
 }
+
+/**
+ * File entity settings.
+ */
+function vies_deploy_update_7007() {
+  variable_set('file_entity_max_size', 3000);
+  variable_set('file_entity_file_upload_wizard_skip_scheme', 1);
+  
+}
