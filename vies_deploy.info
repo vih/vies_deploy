@@ -1,0 +1,7 @@
+core = "7.x"
+description = "Deploy module for VIES"
+name = "VIES Deploy"
+package = "VIES"
+project = "vies_deploy"
+version = "7.x-0.1"
+

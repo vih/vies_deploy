@@ -1,0 +1,54 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * See http://dcycleproject.org/node/43
+ */
+function vies_deploy_install() {
+  for ($i = 7001; $i < 8000; $i++) {
+    $candidate = 'vies_deploy_update_' . $i;
+    if (function_exists($candidate)) {
+      $candidate();
+    }
+  }
+}
+
+/**
+ * Setting the theme.
+ */
+function vies_deploy_update_7000() {
+  // Setting for date api.
+  variable_set('date_first_day', 1);
+
+  $theme = 'ketsjup';
+  $admin_theme = 'seven';
+
+  // Enable standard theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $theme)
+    ->execute();
+
+  // Disable bartik.
+  db_update('system')
+    ->fields(array('status' => 0))
+    ->condition('type', 'theme')
+    ->condition('name', 'responsive_bartik')
+    ->execute();
+
+  variable_set('theme_default', $theme);
+
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $admin_theme)
+    ->execute();
+  variable_set('admin_theme', $admin_theme);
+  variable_set('node_admin_theme', '1');
+}
