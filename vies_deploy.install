@@ -52,3 +52,67 @@ function vies_deploy_update_7000() {
   variable_set('admin_theme', $admin_theme);
   variable_set('node_admin_theme', '1');
 }
+
+/**
+ * Granting permissions for the editor.
+ */
+function vies_deploy_update_7001() {
+  user_role_grant_permissions('editor', array('view the administration theme', 'save draft', 'create files', 'create url aliases'));
+}
+
+/**
+ * Disable unneeded modules.
+ */
+function vies_deploy_update_7002() {
+  module_disable(array('apps', 'dblog', 'search_api_solr'));
+  drupal_uninstall_modules(array('apps', 'search_api_solr'));
+  
+  module_disable(array('panopoly_news_demo'));
+  drupal_uninstall_modules(array('panopoly_news_demo'));
+}
+
+/**
+ * Enable Panopoly News.
+ */
+function vies_deploy_update_7003() {
+  module_enable(array('panopoly_news'));
+
+  user_role_grant_permissions('administrator', array('create panopoly_news_article content', 'edit own panopoly_news_article content', 'edit any panopoly_news_article content', 'delete own panopoly_news_article content', 'delete any panopoly_news_article content'));
+
+  user_role_grant_permissions('editor', array('create panopoly_news_article content', 'edit own panopoly_news_article content', 'edit any panopoly_news_article content', 'delete own panopoly_news_article content', 'delete any panopoly_news_article content'));
+
+  user_role_grant_permissions('administrator', array('administer panelizer node panopoly_news_article defaults', 'administer panelizer node panopoly_news_article overview', 'administer panelizer node panopoly_news_article settings', 'administer panelizer node panopoly_news_article context', 'administer panelizer node panopoly_news_article layout', 'administer panelizer node panopoly_news_article content'));
+
+  user_role_grant_permissions('editor', array('administer panelizer node panopoly_news_article defaults', 'administer panelizer node panopoly_news_article overview', 'administer panelizer node panopoly_news_article settings', 'administer panelizer node panopoly_news_article layout', 'administer panelizer node panopoly_news_article content'));
+}
+
+/**
+ * Revoke breadcrumb permissions for the editor
+ */
+function vies_deploy_update_7004() {
+  user_role_revoke_permissions('editor', array('administer panelizer taxonomy_term panopoly_categories breadcrumbs', 'administer panelizer node panopoly_page breadcrumbs'));
+}
+
+/**
+ * Enable other necessary modules.
+ */
+function vies_deploy_update_7005() {
+  module_enable(array('google_analytics'));
+  module_enable(array('metatag', 'metatag_panels'));
+  module_enable(array('mailchimp', 'mailchimp_lists'));
+  module_enable(array('webform', 'webform_mailchimp', 'select_or_other'));
+  module_enable(array('media_wysiwyg', 'media_wysiwyg_view_mode'));
+  module_enable(array('pdf_reader'));
+  module_enable(array('calendar'));
+  module_enable(array('userreport'));
+  module_enable(array('twitter_timeline'));
+}
+
+/**
+ * Enabled VIH modules.
+ */
+function vies_deploy_update_7006() {
+  module_enable(array('vih_viggo'));
+  module_enable(array('vih_pwi'));
+  module_enable(array('twitter_timeline'));
+}
