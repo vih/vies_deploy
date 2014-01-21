@@ -57,7 +57,8 @@ function vies_deploy_update_7000() {
  * Granting permissions for the editor.
  */
 function vies_deploy_update_7001() {
-  user_role_grant_permissions('editor', array('view the administration theme', 'save draft', 'create files', 'create url aliases'));
+  $role = user_role_load_by_name('editor');
+  user_role_grant_permissions($role->rid, array('view the administration theme', 'save draft', 'create files', 'create url aliases'));
 }
 
 /**
@@ -77,20 +78,25 @@ function vies_deploy_update_7002() {
 function vies_deploy_update_7003() {
   module_enable(array('panopoly_news'));
 
-  user_role_grant_permissions('administrator', array('create panopoly_news_article content', 'edit own panopoly_news_article content', 'edit any panopoly_news_article content', 'delete own panopoly_news_article content', 'delete any panopoly_news_article content'));
+  $administrator = user_role_load_by_name('administrator');
+  $editor = user_role_load_by_name('editor');
 
-  user_role_grant_permissions('editor', array('create panopoly_news_article content', 'edit own panopoly_news_article content', 'edit any panopoly_news_article content', 'delete own panopoly_news_article content', 'delete any panopoly_news_article content'));
+  user_role_grant_permissions($administrator->rid, array('create panopoly_news_article content', 'edit own panopoly_news_article content', 'edit any panopoly_news_article content', 'delete own panopoly_news_article content', 'delete any panopoly_news_article content'));
 
-  user_role_grant_permissions('administrator', array('administer panelizer node panopoly_news_article defaults', 'administer panelizer node panopoly_news_article overview', 'administer panelizer node panopoly_news_article settings', 'administer panelizer node panopoly_news_article context', 'administer panelizer node panopoly_news_article layout', 'administer panelizer node panopoly_news_article content'));
+  user_role_grant_permissions($editor->rid, array('create panopoly_news_article content', 'edit own panopoly_news_article content', 'edit any panopoly_news_article content', 'delete own panopoly_news_article content', 'delete any panopoly_news_article content'));
 
-  user_role_grant_permissions('editor', array('administer panelizer node panopoly_news_article defaults', 'administer panelizer node panopoly_news_article overview', 'administer panelizer node panopoly_news_article settings', 'administer panelizer node panopoly_news_article layout', 'administer panelizer node panopoly_news_article content'));
+  user_role_grant_permissions($administrator->rid, array('administer panelizer node panopoly_news_article defaults', 'administer panelizer node panopoly_news_article overview', 'administer panelizer node panopoly_news_article settings', 'administer panelizer node panopoly_news_article context', 'administer panelizer node panopoly_news_article layout', 'administer panelizer node panopoly_news_article content'));
+
+  user_role_grant_permissions($editor->rid, array('administer panelizer node panopoly_news_article defaults', 'administer panelizer node panopoly_news_article overview', 'administer panelizer node panopoly_news_article settings', 'administer panelizer node panopoly_news_article layout', 'administer panelizer node panopoly_news_article content'));
 }
 
 /**
  * Revoke breadcrumb permissions for the editor
  */
 function vies_deploy_update_7004() {
-  user_role_revoke_permissions('editor', array('administer panelizer taxonomy_term panopoly_categories breadcrumbs', 'administer panelizer node panopoly_page breadcrumbs'));
+  $editor = user_role_load_by_name('editor');
+
+  user_role_revoke_permissions($editor->rid, array('administer panelizer taxonomy_term panopoly_categories breadcrumbs', 'administer panelizer node panopoly_page breadcrumbs'));
 }
 
 /**
