@@ -131,8 +131,15 @@ function vies_deploy_update_7007() {
 }
 
 /**
- * File entity settings.
+ * Enabled field translation.
  */
 function vies_deploy_update_7008() {
   module_enable(array('i18n_field'));
+}
+
+/**
+ * File entity settings.
+ */
+function vies_deploy_update_7009() {
+  features_revert(array('vih_calendar'));
 }
