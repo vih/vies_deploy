@@ -114,5 +114,6 @@ function vies_deploy_update_7005() {
 function vies_deploy_update_7006() {
   module_enable(array('vih_viggo'));
   module_enable(array('vih_pwi'));
+  module_enable(array('vih_calendar'));
   module_enable(array('twitter_timeline'));
 }
