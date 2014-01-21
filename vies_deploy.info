@@ -14,7 +14,6 @@ dependencies[] = mailchimp_lists
 dependencies[] = webform
 dependencies[] = webform_mailchimp
 dependencies[] = select_or_other
-dependencies[] = pdf_reader
 dependencies[] = calendar
 dependencies[] = userreport
 dependencies[] = twitter_timeline
