@@ -5,7 +5,7 @@ package = "VIES"
 project = "vies_deploy"
 version = "7.x-0.1"
 
-dependencies[] = google_analytics
+dependencies[] = googleanalytics
 dependencies[] = media_wysiwyg
 dependencies[] = media_wysiwyg_view_mode
 dependencies[] = metatag
