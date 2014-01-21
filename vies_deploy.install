@@ -128,5 +128,11 @@ function vies_deploy_update_7006() {
 function vies_deploy_update_7007() {
   variable_set('file_entity_max_filesize', '5 MB');
   variable_set('file_entity_file_upload_wizard_skip_scheme', 1);
-  
+}
+
+/**
+ * File entity settings.
+ */
+function vies_deploy_update_7008() {
+  module_enable(array('i18n_field'));
 }
