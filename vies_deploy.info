@@ -5,12 +5,21 @@ package = "VIES"
 project = "vies_deploy"
 version = "7.x-0.1"
 
+dependencies[] = google_analytics
 dependencies[] = media_wysiwyg
 dependencies[] = media_wysiwyg_view_mode
 dependencies[] = metatag
 dependencies[] = metatag_panels
-dependencies[] = mailchimp
+dependencies[] = mailchimp_lists
 dependencies[] = webform
 dependencies[] = webform_mailchimp
+dependencies[] = select_or_other
 dependencies[] = pdf_reader
+dependencies[] = calendar
+dependencies[] = userreport
+dependencies[] = twitter_timeline
+dependencies[] = vih_viggo
+dependencies[] = vih_pwi
+dependencies[] = vih_calendar
 
+  

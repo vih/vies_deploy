@@ -111,7 +111,6 @@ function vies_deploy_update_7005() {
   module_enable(array('pdf_reader'));
   module_enable(array('calendar'));
   module_enable(array('userreport'));
-  module_enable(array('twitter_timeline'));
 }
 
 /**
