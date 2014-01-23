@@ -135,7 +135,7 @@ function vies_deploy_update_7005() {
   module_enable(array('google_analytics'));
   module_enable(array('metatag', 'metatag_panels'));
   module_enable(array('mailchimp', 'mailchimp_lists'));
-  module_enable(array('webform', 'webform_mailchimp', 'select_or_other', 'addressfield'));
+  module_enable(array('webform', 'webform_mailchimp', 'select_or_other', 'addressfield_tokens'));
   module_enable(array('media_wysiwyg', 'media_wysiwyg_view_mode'));
   module_enable(array('calendar'));
   module_enable(array('userreport'));
