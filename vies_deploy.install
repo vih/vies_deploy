@@ -94,7 +94,7 @@ function vies_deploy_update_7001() {
  * Disable unneeded modules.
  */
 function vies_deploy_update_7002() {
-  module_disable(array('apps', 'dblog'));
+  module_disable(array('apps'));
   drupal_uninstall_modules(array('apps'));
   
   module_disable(array('panopoly_news_demo'));
