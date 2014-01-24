@@ -94,8 +94,8 @@ function vies_deploy_update_7001() {
  * Disable unneeded modules.
  */
 function vies_deploy_update_7002() {
-  module_disable(array('apps', 'dblog', 'search_api_solr'));
-  drupal_uninstall_modules(array('apps', 'search_api_solr'));
+  module_disable(array('apps', 'dblog'));
+  drupal_uninstall_modules(array('apps'));
   
   module_disable(array('panopoly_news_demo'));
   drupal_uninstall_modules(array('panopoly_news_demo'));
