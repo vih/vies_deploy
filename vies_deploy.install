@@ -88,6 +88,8 @@ function vies_deploy_update_7000() {
 function vies_deploy_update_7001() {
   $role = user_role_load_by_name('editor');
   user_role_grant_permissions($role->rid, array('view the administration theme', 'save draft', 'create files', 'create url aliases'));
+  user_role_grant_permissions($role->rid, array('use ipe with page manager'));
+
 }
 
 /**
