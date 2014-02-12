@@ -132,7 +132,7 @@ function vies_deploy_update_7004() {
  * Enable other necessary modules.
  */
 function vies_deploy_update_7005() {
-  module_enable(array('logintoboggan'));
+  module_enable(array('logintoboggan', 'entityqueue'));
   module_enable(array('google_analytics'));
   module_enable(array('metatag', 'metatag_panels'));
   module_enable(array('mailchimp', 'mailchimp_lists'));
