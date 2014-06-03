@@ -135,7 +135,7 @@ function vies_deploy_update_7004() {
 function vies_deploy_update_7005() {
   module_enable(array('logintoboggan', 'entityqueue'));
   module_enable(array('google_analytics'));
-  module_enable(array('metatag', 'metatag_panels'));
+  module_enable(array('panopoly_seo'));
   module_enable(array('mailchimp', 'mailchimp_lists'));
   module_enable(array('webform', 'webform_mailchimp', 'select_or_other', 'addressfield_tokens'));
   module_enable(array('media_wysiwyg', 'media_wysiwyg_view_mode'));
@@ -173,4 +173,11 @@ function vies_deploy_update_7008() {
  */
 function vies_deploy_update_7009() {
   _vies_deploy_features_revert(array('vih_calendar'));
+}
+
+/**
+ * Enable Hall of Fame and VIH Facilitites
+ */
+function vies_deploy_update_7009() {
+  module_enable(array('vih_facilities', 'vies_hall_of_fame'));
 }
