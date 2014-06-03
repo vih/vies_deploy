@@ -9,7 +9,7 @@
  * See http://dcycleproject.org/node/43
  */
 function vies_deploy_install() {
-  for ($i = 7001; $i < 8000; $i++) {
+  for ($i = 7000; $i < 8000; $i++) {
     $candidate = 'vies_deploy_update_' . $i;
     if (function_exists($candidate)) {
       $candidate();
@@ -89,7 +89,6 @@ function vies_deploy_update_7001() {
   $role = user_role_load_by_name('editor');
   user_role_grant_permissions($role->rid, array('view the administration theme', 'save draft', 'create files', 'create url aliases'));
   user_role_grant_permissions($role->rid, array('use ipe with page manager'));
-
 }
 
 /**
