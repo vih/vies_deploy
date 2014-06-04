@@ -178,6 +178,6 @@ function vies_deploy_update_7009() {
 /**
  * Enable Hall of Fame and VIH Facilitites
  */
-function vies_deploy_update_7009() {
+function vies_deploy_update_7010() {
   module_enable(array('vih_facilities', 'vies_hall_of_fame'));
 }
