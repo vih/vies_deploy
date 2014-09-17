@@ -181,3 +181,10 @@ function vies_deploy_update_7009() {
 function vies_deploy_update_7010() {
   module_enable(array('vih_facilities', 'vies_hall_of_fame'));
 }
+
+/**
+ * VIH Plugins
+ */
+function vies_deploy_update_7011() {
+  module_enable(array('vih_plugins'));
+}
