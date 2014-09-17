@@ -183,8 +183,15 @@ function vies_deploy_update_7010() {
 }
 
 /**
- * VIH Plugins
+ * Enable VIH Plugins
  */
 function vies_deploy_update_7011() {
   module_enable(array('vih_plugins'));
+}
+
+/**
+ * Enable VIES Subject and VIES Employee
+ */
+function vies_deploy_update_7012() {
+  module_enable(array('vies_subject', 'vies_employee'));
 }
