@@ -21,3 +21,4 @@ dependencies[] = vih_calendar
 dependencies[] = vih_facilities
 dependencies[] = vih_plugins
 dependencies[] = i18n_field
+dependencies[] = radix_layouts
