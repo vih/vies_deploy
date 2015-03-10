@@ -123,4 +123,6 @@ function vies_deploy_views_default_views() {
     t('VIES'),
   );
   $export['recent_news'] = $view;
+
+  return $export;
 }
